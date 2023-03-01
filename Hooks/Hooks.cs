@@ -2,10 +2,8 @@
 using AventStack.ExtentReports.Gherkin.Model;
 using BoDi;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using SpecFlowProject1.Utility;
-using TechTalk.SpecFlow;
 
 namespace SpecFlowProject1.Hooks
 {
@@ -54,7 +52,7 @@ namespace SpecFlowProject1.Hooks
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
         {
             Console.WriteLine("Running before scenario...");
-            IWebDriver driver = new ChromeDriver();
+            IWebDriver driver = new EdgeDriver();
             driver.Manage().Window.Maximize();
 
             _container.RegisterInstanceAs<IWebDriver>(driver);
